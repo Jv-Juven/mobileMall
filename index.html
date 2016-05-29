@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- WebApp全屏模式 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <!-- 注意：viewport 后面加上 minimal-ui 在safri 体现效果 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 隐藏状态栏/设置状态栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- safri 添加到主屏界面的显示标题 -->
+    <meta name="apple-mobile-web-app-title" content="应用标题">
+    <!-- 忽略自动识别数字为电话号码 -->
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 忽略自动识别邮箱账号 -->
+    <meta content="email=no" name="format-detection" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 --> 
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 --> 
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+
+    <title>手机App</title>
+
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/lib/swiper.css">
+
+    <link rel="stylesheet" href="static/lib/sm.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+
+  </head>
+  <body>
+    <div id="app" class="app page-group">
+      <router-view></router-view>
+    </div>
+    <!-- built files will be auto injected -->
+    <!-- 不允许访问src文件夹 -->
+    <script src="static/lib/swiper.js"></script>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+    <script>
+      // 关闭SUI的路由
+      $.config = {
+        router: false
+      }
+    </script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.js' charset='utf-8'></script>
+    <script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+    <script>
+        // 重置根元素字体大小
+        function resize () {
+            var size = $(window).outerWidth()/320.0 * 20;
+            $('html').css({
+                fontSize: size + 'px'
+            });
+        }
+        window.onload = window.onresize = resize;
+
+    </script>
+  </body>
+</html>
