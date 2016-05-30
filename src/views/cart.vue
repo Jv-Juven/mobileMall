@@ -31,9 +31,9 @@
                   颜色：卡其色 <span class="size">尺寸：S</span> 
                 </div>
                 <div class="num-wrapper">
-                  <span class="op-btn minus">-</span>
-                  <input class="num-input" type="num" value="1">
-                  <span class="op-btn plus">+</span>
+                  <span class="op-btn minus" @click="minus">-</span>
+                  <input class="num-input" type="num" :value="count">
+                  <span class="op-btn plus" @click="plus">+</span>
                 </div>
                 <span class="total-money">399积分</span>
               </div>
@@ -185,8 +185,21 @@
 </template>
 <script>
   import titleHeader from '../components/header'
+  import store from '../vuex/store'
+  import { plus, minus } from '../vuex/actions'
+  import { count } from '../vuex/getter'
   import $ from 'zepto'
   export default {
+    store,
+    vuex: {
+      getters: {
+        count: count
+      },
+      actions: {
+        plus,
+        minus
+      }
+    },
     components: {
       titleHeader
     },
